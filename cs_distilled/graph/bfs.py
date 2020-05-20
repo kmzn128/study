@@ -1,5 +1,5 @@
 from collections import deque
-def bfs(graph, start_node, key):
+def bfs(graph, start_node):#, key):
     next_nodes = deque([])
     seen_nodes = set()
     
@@ -9,8 +9,8 @@ def bfs(graph, start_node, key):
     while next_nodes:
         node = next_nodes.popleft()
         print(node)
-        if node == key:
-            return node
+#         if node == key:
+#             return node
         if node in graph:
             for n in graph[node]:
                 if not n in seen_nodes:
@@ -28,4 +28,13 @@ graph = {
     'M':['N']
     }
 
-bfs(graph, 'A','E')
+g_undir = {
+    1:[2,3],
+    2:[1,2,4],
+    3:[1,3,5],
+    4:[2,5],
+    5:[3,4,6],
+    6:[5]
+    }
+#bfs(g, 'A','E')
+bfs(g_undir, 1)

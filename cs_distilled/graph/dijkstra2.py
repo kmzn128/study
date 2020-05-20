@@ -9,7 +9,7 @@ example_graph = {
     'Z': {'W': 5, 'Y': 1},
 }
 
-def dijkstra_again(start, goal):
+def dijkstra(start, goal):
     path = [start]
     score = 0
     searching_heap = []
@@ -31,4 +31,4 @@ def dijkstra_again(start, goal):
                 checked[next_pos] = new_score
                 heapq.heappush(searching_heap, (new_score, new_path)) 
 
-dijkstra_again('U', 'Z')
+dijkstra('U', 'Z')
